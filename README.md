@@ -52,20 +52,21 @@ El flujo de información se divide en tres grandes bloques simulados:
 
 ```mermaid
 graph LR
-    subgraph 🛰️ Satélite en Órbita
+
+    subgraph SAT["🛰️ Satelite en Orbita"]
         direction TB
-        EPS[EPS - Energía] -->|Hex Frame| MQTT
-        TCS[TCS - Térmico] -->|Hex Frame| MQTT
-        AOCS[AOCS - Orientación] -->|Hex Frame| MQTT
-        PAY[Payload - Carga Útil] -->|Hex Frame| MQTT
+        EPS["EPS - Energia"] -->|"Hex Frame"| MQTT
+        TCS["TCS - Termico"] -->|"Hex Frame"| MQTT
+        AOCS["AOCS - Orientacion"] -->|"Hex Frame"| MQTT
+        PAY["Payload - Carga Util"] -->|"Hex Frame"| MQTT
     end
-    
-    MQTT((📡 Broker MQTT\nEnlace de Radio)) -->|Hex Frame| GS
-    
-    subgraph 🌍 Estación Terrena
+
+    MQTT["📡 Broker MQTT<br/>Enlace de Radio"] -->|"Hex Frame"| GS
+
+    subgraph GROUND["🌍 Estacion Terrena"]
         direction TB
-        GS[Decodificador Terreno] -->|Métricas Limpias| PROM[(Prometheus)]
-        PROM -->|Consultas| GRAF[Tablero Grafana]
+        GS["Decodificador Terreno"] -->|"Metricas Limpias"| PROM["Prometheus"]
+        PROM -->|"Consultas"| GRAF["Tablero Grafana"]
     end
 
     style MQTT fill:#e6f3ff,stroke:#0066cc,stroke-width:2px
