@@ -1,0 +1,112 @@
+version: '3.8'
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2.0.15
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+    deploy:
+      resources:
+        limits:
+          memory: 30M
+
+  prometheus:
+    image: prom/prometheus:v2.45.0
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus:/etc/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+      - '--storage.tsdb.retention.time=2h'    # Solo guarda las últimas 2 horas
+      - '--storage.tsdb.retention.size=100MB' # Límite máximo de disco duro
+    deploy:
+      resources:
+        limits:
+          memory: 150M
+
+  grafana:
+    image: grafana/grafana:10.0.3
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
+    deploy:
+      resources:
+        limits:
+          memory: 200M
+
+  ground_station:
+    build: ./src
+    command: python ground_station.py
+    environment:
+      - PYTHONUNBUFFERED=1
+      - MQTT_BROKER=mosquitto
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mosquitto
+    deploy:
+      resources:
+        limits:
+          memory: 50M
+
+  arsat_power:
+    build: ./src
+    command: python power_service.py
+    environment:
+      - PYTHONUNBUFFERED=1
+      - MQTT_BROKER=mosquitto
+    depends_on:
+      - mosquitto
+    deploy:
+      resources:
+        limits:
+          memory: 50M
+
+  arsat_thermal:
+    build: ./src
+    command: python thermal_service.py
+    environment:
+      - PYTHONUNBUFFERED=1
+      - MQTT_BROKER=mosquitto
+    depends_on:
+      - mosquitto
+    deploy:
+      resources:
+        limits:
+          memory: 50M
+
+  arsat_aocs:
+    build: ./src
+    command: python aocs_service.py
+    environment:
+      - PYTHONUNBUFFERED=1
+      - MQTT_BROKER=mosquitto
+    depends_on:
+      - mosquitto
+    deploy:
+      resources:
+        limits:
+          memory: 50M
+
+  arsat_payload:
+    build: ./src
+    command: python payload_service.py
+    environment:
+      - PYTHONUNBUFFERED=1
+      - MQTT_BROKER=mosquitto
+    depends_on:
+      - mosquitto
+    deploy:
+      resources:
+        limits:
+          memory: 50M
