@@ -1,0 +1,26 @@
+groups:
+  - name: arsat_alerts
+    rules:
+      - alert: CriticalBattery
+        expr: arsat_eps_battery_percent < 20
+        labels:
+          severity: critical
+        annotations:
+          summary: "BATERÍA CRÍTICA EN ARSAT"
+          description: "El nivel de batería ha caído por debajo del 20%."
+
+      - alert: HighConsumption
+        expr: arsat_eps_current_a > 8
+        labels:
+          severity: critical
+        annotations:
+          summary: "CONSUMO DE CORRIENTE EXCESIVO"
+          description: "Se detecta un consumo superior a 8A."
+
+      - alert: PayloadOffline
+        expr: arsat_payload_status == 0
+        labels:
+          severity: critical
+        annotations:
+          summary: "CARGA ÚTIL CAÍDA"
+          description: "Los transpondedores de la carga útil reportan estado de falla."

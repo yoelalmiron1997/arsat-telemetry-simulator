@@ -1,0 +1,458 @@
+{
+  "title": "ARSAT Telemetry Dashboard - School Project",
+  "timezone": "browser",
+  "refresh": "5s",
+  "panels": [
+    {
+      "type": "text",
+      "title": "Misión ARSAT - Órbita Geoestacionaria",
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "options": {
+        "content": "# Misión Satelital ARSAT (Simulación)\n\nLos satélites ARSAT fueron diseñados y ensamblados en **Argentina**. Aunque en la realidad operan en órbita Geoestacionaria (inmóviles respecto a la Tierra), **en esta simulación escolar** hemos acelerado su movimiento orbital para que puedas visualizar su trazo en vivo alrededor del mundo.\n\n### 🛰️ Datos de Vuelo:\n* **Altitud:** ~35,786 km sobre el nivel del mar.\n* **Velocidad Simulada:** Modo Rápido (Acelerado para demostración).\n* **Sensores:** Control Térmico, Energía (EPS) y Actitud.",
+        "mode": "markdown"
+      }
+    },
+    {
+      "type": "geomap",
+      "title": "Satellite Position (Live on Earth)",
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "targets": [
+        {
+          "expr": "arsat_aocs_gps_lat",
+          "format": "time_series",
+          "legendFormat": "latitude",
+          "refId": "A"
+        },
+        {
+          "expr": "arsat_aocs_gps_lon",
+          "format": "time_series",
+          "legendFormat": "longitude",
+          "refId": "B"
+        }
+      ],
+      "transformations": [
+        {
+          "id": "seriesToColumns",
+          "options": {
+            "byField": "Time"
+          }
+        }
+      ],
+      "options": {
+        "view": {
+          "id": "zero",
+          "lat": -34,
+          "lon": -64,
+          "zoom": 2
+        },
+        "controls": {
+          "mouseWheelZoom": true,
+          "showAttribution": false,
+          "showScale": true,
+          "showZoom": true
+        },
+        "basemap": {
+          "config": {},
+          "name": "Layer 0",
+          "type": "carto"
+        },
+        "layers": [
+          {
+            "type": "route",
+            "name": "Trazo Orbital",
+            "config": {
+              "showLegend": false,
+              "lineWidth": 3,
+              "color": {
+                "fixed": "dark-orange"
+              }
+            },
+            "location": {
+              "mode": "auto"
+            }
+          },
+          {
+            "type": "markers",
+            "name": "Posición Actual",
+            "config": {
+              "showLegend": false,
+              "size": {
+                "fixed": 20
+              },
+              "color": {
+                "fixed": "red"
+              }
+            },
+            "location": {
+              "mode": "auto"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "stat",
+      "title": "Orbit Altitude",
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 0,
+        "y": 8
+      },
+      "targets": [
+        {
+          "expr": "arsat_aocs_gps_alt_km",
+          "legendFormat": "Altitude"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "lengthkm",
+          "color": {
+            "mode": "thresholds"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 35000
+              },
+              {
+                "color": "red",
+                "value": 36000
+              }
+            ]
+          }
+        }
+      },
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto"
+      }
+    },
+    {
+      "type": "stat",
+      "title": "Payload Status",
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 6,
+        "y": 8
+      },
+      "targets": [
+        {
+          "expr": "arsat_payload_status",
+          "legendFormat": "Status"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "text": "OFFLINE",
+                  "color": "red"
+                },
+                "1": {
+                  "text": "ONLINE",
+                  "color": "green"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "color": {
+            "mode": "thresholds"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          }
+        }
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center"
+      }
+    },
+    {
+      "type": "stat",
+      "title": "Estado General del Satélite",
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 12,
+        "y": 8
+      },
+      "targets": [
+        {
+          "expr": "count(arsat_eps_battery_percent < 20 or arsat_eps_current_a > 8 or arsat_payload_status == 0) or vector(0)"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "text": "NOMINAL",
+                  "color": "green"
+                }
+              },
+              "type": "value"
+            },
+            {
+              "options": {
+                "from": 1,
+                "to": 100,
+                "result": {
+                  "text": "ANOMALÍA CRÍTICA",
+                  "color": "dark-red"
+                }
+              },
+              "type": "range"
+            }
+          ],
+          "color": {
+            "mode": "thresholds"
+          },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "dark-red",
+                "value": 1
+              }
+            ]
+          }
+        }
+      },
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "textMode": "value"
+      }
+    },
+    {
+      "type": "gauge",
+      "title": "EPS Battery Level",
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 0,
+        "y": 14
+      },
+      "targets": [
+        {
+          "expr": "arsat_eps_battery_percent",
+          "legendFormat": "Battery"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "min": 0,
+          "max": 100,
+          "unit": "percent",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "orange",
+                "value": 20
+              },
+              {
+                "color": "green",
+                "value": 50
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "gauge",
+      "title": "EPS Voltage",
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 6,
+        "y": 14
+      },
+      "targets": [
+        {
+          "expr": "arsat_eps_voltage_v",
+          "legendFormat": "Bus Voltage"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "min": 0,
+          "max": 30,
+          "unit": "volt",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 22
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "gauge",
+      "title": "Attitude Control (Pitch/Roll/Yaw)",
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 12,
+        "y": 14
+      },
+      "targets": [
+        {
+          "expr": "arsat_aocs_pitch_deg",
+          "legendFormat": "Pitch"
+        },
+        {
+          "expr": "arsat_aocs_roll_deg",
+          "legendFormat": "Roll"
+        },
+        {
+          "expr": "arsat_aocs_yaw_deg",
+          "legendFormat": "Yaw"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "min": -180,
+          "max": 180,
+          "unit": "degree",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": -10
+              },
+              {
+                "color": "red",
+                "value": 10
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "timeseries",
+      "title": "Thermal Control System (TCS)",
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 20
+      },
+      "targets": [
+        {
+          "expr": "arsat_tcs_solar_temp_c",
+          "legendFormat": "Solar Panels"
+        },
+        {
+          "expr": "arsat_tcs_battery_temp_c",
+          "legendFormat": "Batteries"
+        },
+        {
+          "expr": "arsat_tcs_payload_temp_c",
+          "legendFormat": "Payload"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "celsius",
+          "custom": {
+            "fillOpacity": 15,
+            "gradientMode": "opacity",
+            "lineWidth": 2
+          }
+        }
+      }
+    },
+    {
+      "type": "timeseries",
+      "title": "Payload Network Traffic",
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 20
+      },
+      "targets": [
+        {
+          "expr": "arsat_payload_downlink_mbps",
+          "legendFormat": "Downlink (Mbps)"
+        },
+        {
+          "expr": "arsat_payload_uplink_mbps",
+          "legendFormat": "Uplink (Mbps)"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "megbps",
+          "custom": {
+            "fillOpacity": 30,
+            "gradientMode": "hue",
+            "lineWidth": 2
+          }
+        }
+      }
+    }
+  ],
+  "schemaVersion": 38
+}

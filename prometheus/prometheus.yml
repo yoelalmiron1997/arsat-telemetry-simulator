@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
+rule_files:
+  - 'alerts.yml'
+
+scrape_configs:
+  - job_name: 'arsat_telemetry'
+    static_configs:
+      - targets: ['ground_station:8000']
