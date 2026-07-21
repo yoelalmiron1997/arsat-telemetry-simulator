@@ -54,12 +54,26 @@ jobs:
         working-directory: tests
         run: pytest api -v --junitxml=../results/api-results.xml
 
+      # Los tests de integración inyectan tramas MQTT con valores conocidos
+      # y deterministas, pero arsat_power/arsat_thermal/arsat_aocs/arsat_payload
+      # publican telemetría real cada 2s todo el tiempo. Si los dejamos
+      # corriendo, pueden pisar el valor inyectado por el test antes de que
+      # se llegue a leer la métrica (condición de carrera). Los pausamos
+      # solo durante este suite para tener un entorno determinista.
+      - name: Pausar generadores de telemetría en vivo (para tests deterministas)
+        run: docker compose stop arsat_power arsat_thermal arsat_aocs arsat_payload
+
       # --- Integration tests (Robot Framework, MQTT end-to-end) ---
       - name: Integration tests (Robot Framework)
         working-directory: tests/integration
         run: robot --outputdir ../../results/robot .
 
+      - name: Reanudar generadores de telemetría en vivo
+        run: docker compose start arsat_power arsat_thermal arsat_aocs arsat_payload
+
       # --- Regression / fault-injection tests (más lentos por el timing) ---
+      # Estos SÍ necesitan los generadores corriendo: dependen del ciclo
+      # real de anomalías de power_service.py para validar las alertas.
       - name: Regression tests — inyección de fallas y alertas
         working-directory: tests
         run: pytest regression -v --junitxml=../results/regression-results.xml
