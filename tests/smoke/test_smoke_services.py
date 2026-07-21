@@ -10,8 +10,7 @@ import socket
 import pytest
 import requests
 
-from conftest import GRAFANA_URL, GROUND_STATION_URL, MQTT_HOST, MQTT_PORT, PROMETHEUS_URL
-
+from conftest import GRAFANA_URL, GROUND_STATION_URL, MQTT_HOST, MQTT_PORT, PROMETHEUS_URL, wait_until
 
 def test_mosquitto_acepta_conexiones_tcp():
     with socket.create_connection((MQTT_HOST, MQTT_PORT), timeout=5):
@@ -43,16 +42,23 @@ def test_grafana_esta_healthy():
 def test_prometheus_scrapea_ground_station_correctamente():
     """Confirma que el target 'arsat_telemetry' (ground_station:8000)
     está UP desde el punto de vista de Prometheus, no solo alcanzable
-    desde el test runner."""
-    resp = requests.get(f"{PROMETHEUS_URL}/api/v1/targets", timeout=5)
-    resp.raise_for_status()
-    targets = resp.json()["data"]["activeTargets"]
+    desde el test runner.
 
-    arsat_targets = [t for t in targets if t["labels"].get("job") == "arsat_telemetry"]
-    assert arsat_targets, "No se encontró el target 'arsat_telemetry' en Prometheus"
-    assert all(t["health"] == "up" for t in arsat_targets), (
-        f"El target de ground_station no está 'up': {arsat_targets}"
-    )
+    Nota: Prometheus puede tardar hasta un scrape_interval (5s) en hacer
+    su primer scrape luego de levantar, así que reintentamos en vez de
+    chequear una sola vez apenas arranca el test."""
+
+    def _target_esta_up():
+        resp = requests.get(f"{PROMETHEUS_URL}/api/v1/targets", timeout=5)
+        resp.raise_for_status()
+        targets = resp.json()["data"]["activeTargets"]
+        arsat_targets = [t for t in targets if t["labels"].get("job") == "arsat_telemetry"]
+        if not arsat_targets:
+            return False
+        return all(t["health"] == "up" for t in arsat_targets)
+
+    esta_up = wait_until(_target_esta_up, timeout_seconds=15, poll_interval=2)
+    assert esta_up, "El target de ground_station no llegó a estado 'up' en Prometheus"
 
 
 def test_reglas_de_alertas_cargadas_en_prometheus():
