@@ -1,0 +1,81 @@
+name: QA Pipeline — ARSAT Telemetry Simulator
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  test:
+    name: Smoke + API + Integration + Regression
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Levantar la infraestructura (docker compose)
+        run: docker compose up -d --build
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias de testing
+        run: pip install -r tests/requirements.txt
+
+      - name: Esperar a que todos los servicios respondan
+        run: |
+          echo "Esperando a Mosquitto, Prometheus, Grafana y Ground Station..."
+          for i in $(seq 1 30); do
+            if curl -sf http://localhost:9090/-/ready >/dev/null && \
+               curl -sf http://localhost:3000/api/health >/dev/null && \
+               curl -sf http://localhost:8000/metrics >/dev/null; then
+              echo "Servicios arriba."
+              exit 0
+            fi
+            echo "Intento $i/30, reintentando en 3s..."
+            sleep 3
+          done
+          echo "Los servicios no levantaron a tiempo."
+          docker compose logs
+          exit 1
+
+      # --- Smoke tests: se cortan acá si algo básico está roto ---
+      - name: Smoke tests
+        working-directory: tests
+        run: pytest smoke -v --junitxml=../results/smoke-results.xml
+
+      # --- API tests ---
+      - name: API tests (Pytest)
+        working-directory: tests
+        run: pytest api -v --junitxml=../results/api-results.xml
+
+      # --- Integration tests (Robot Framework, MQTT end-to-end) ---
+      - name: Integration tests (Robot Framework)
+        working-directory: tests/integration
+        run: robot --outputdir ../../results/robot .
+
+      # --- Regression / fault-injection tests (más lentos por el timing) ---
+      - name: Regression tests — inyección de fallas y alertas
+        working-directory: tests
+        run: pytest regression -v --junitxml=../results/regression-results.xml
+
+      - name: Logs de los servicios (si algo falló)
+        if: failure()
+        run: docker compose logs --tail=200
+
+      - name: Publicar resultados de test como artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-reports
+          path: results/
+          retention-days: 30
+
+      - name: Apagar la infraestructura
+        if: always()
+        run: docker compose down -v

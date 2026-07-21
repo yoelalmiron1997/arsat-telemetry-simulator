@@ -1,0 +1,5 @@
+pytest==8.3.3
+pytest-html==4.1.1
+requests==2.32.3
+paho-mqtt==1.6.1
+robotframework==7.1.1
