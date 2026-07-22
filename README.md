@@ -7,6 +7,12 @@
   ![Grafana](https://img.shields.io/badge/Grafana-10.0-F46800?logo=grafana)
   ![Prometheus](https://img.shields.io/badge/Prometheus-TSDB-E6522C?logo=prometheus)
   ![MQTT](https://img.shields.io/badge/MQTT-Broker-660066?logo=mqtt)
+  [![QA Pipeline](https://github.com/yoelalmiron1997/arsat-telemetry-simulator/actions/workflows/ci.yml/badge.svg)](https://github.com/yoelalmiron1997/arsat-telemetry-simulator/actions/workflows/ci.yml)
+
+  <br><br>
+
+  ### 🔴 [Ver Dashboard en Vivo (Demo)](https://snapshots.raintank.io/dashboard/snapshot/PQ49MNRfXkyY8Il9dfPuyUodAw8nV3GQ)
+  <i>Snapshot público del centro de control mostrando una anomalía de batería real, generada por la simulación.</i>
 </div>
 
 <br>
@@ -113,6 +119,27 @@ Una vez que el sistema esté levantado, puedes acceder a las herramientas del ce
 - Asegúrate de que el tablero en Grafana esté configurado para mostrar los **"Last 5 minutes"** y con **Auto-refresh en 5s**.
 - Observa el panel gigante superior derecho. Cuando la simulación inyecte una falla en las baterías, el cartel pasará instantáneamente de color verde (**NOMINAL**) a rojo profundo (**ANOMALÍA CRÍTICA**), volviendo a la normalidad cuando la falla se despeje.
 - El almacenamiento de Prometheus está optimizado en `docker-compose.yml` para retener solo 2 horas de datos (o 100MB), evitando que sature el disco duro en ejecuciones largas.
+
+---
+
+## 🧪 Calidad y Testing (QA Automation)
+
+Además de la simulación en sí, el proyecto incluye un **suite de testing automatizado** con cuatro niveles de prueba, corridos automáticamente en cada push vía GitHub Actions:
+
+| Tipo | Herramienta | Qué valida |
+|---|---|---|
+| **Smoke** | Pytest | Que los 7 servicios estén sanos antes de correr algo más pesado |
+| **API** | Pytest | Contrato del endpoint `/metrics`: disponibilidad, formato, rangos físicos válidos |
+| **Integración** | Robot Framework | Flujo end-to-end determinista (MQTT → Ground Station → Prometheus) con tramas conocidas |
+| **Regresión / Fault Injection** | Pytest | Que las alertas de Prometheus se disparen y se recuperen ante anomalías reales inyectadas |
+
+Reportes de evidencia (JUnit + HTML de Robot Framework) se publican como artifact en cada corrida. Ver [`tests/README.md`](tests/README.md) para el detalle completo y cómo correrlo en local.
+
+---
+
+## 🌐 Deploy Público
+
+El proyecto puede desplegarse públicamente conservando la arquitectura real completa (Python → MQTT → Ground Station → Prometheus → Grafana), exponiendo únicamente Grafana. Ver [`PROD_DEPLOYMENT.md`](PROD_DEPLOYMENT.md) para el detalle.
 
 ---
 
