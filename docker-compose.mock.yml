@@ -1,0 +1,26 @@
+# Override de Compose: reemplaza los 4 generadores aleatorios en vivo por
+# sus versiones "mock" (réplica grabada + rollback en loop, ver src/mock/).
+#
+# NO reemplaza nada de la arquitectura: Mosquitto, ground_station, Prometheus
+# y Grafana son EXACTAMENTE los mismos. Solo cambia qué proceso corre dentro
+# de los 4 contenedores productores, así que ground_station sigue recibiendo
+# tramas MQTT idénticas en formato y topic.
+#
+# Uso (deploy público / portfolio):
+#   docker compose -f docker-compose.yml -f docker-compose.mock.yml -f docker-compose.prod.yml up -d --build
+#
+# Uso local normal (simuladores reales, aleatorios, sin límite de tiempo):
+#   docker compose up -d --build      <- este archivo NO se usa, nada cambia
+
+services:
+  arsat_power:
+    command: python mock/mock_power.py
+
+  arsat_thermal:
+    command: python mock/mock_thermal.py
+
+  arsat_aocs:
+    command: python mock/mock_aocs.py
+
+  arsat_payload:
+    command: python mock/mock_payload.py

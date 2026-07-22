@@ -1,0 +1,18 @@
+# Override de Compose para el deploy público (portfolio).
+#
+# Lo único que hace es mapear Grafana al puerto 80 del servidor, para que
+# se pueda entrar con "http://IP-DEL-SERVIDOR" sin especificar puerto.
+# Si preferís no usar el puerto 80 (por ejemplo, no tenés permisos root en
+# el servidor), no incluyas este archivo y accedé directo a ":3000".
+#
+# Uso (deploy público):
+#   docker compose -f docker-compose.yml -f docker-compose.mock.yml -f docker-compose.prod.yml up -d --build
+#
+# Al pasar "-f" de forma explícita, Compose NO auto-carga docker-compose.override.yml,
+# así que Mosquitto/Prometheus/Ground Station quedan sin puertos públicos
+# (ver docker-compose.yml + docker-compose.override.yml para el detalle).
+
+services:
+  grafana:
+    ports:
+      - "80:3000"

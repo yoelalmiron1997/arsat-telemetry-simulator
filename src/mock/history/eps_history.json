@@ -1,0 +1,452 @@
+[
+  {
+    "voltage": 20.64,
+    "current": 10.13,
+    "battery": 11.38
+  },
+  {
+    "voltage": 20.22,
+    "current": 13.68,
+    "battery": 13.38
+  },
+  {
+    "voltage": 20.89,
+    "current": 10.43,
+    "battery": 12.11
+  },
+  {
+    "voltage": 20.03,
+    "current": 11.09,
+    "battery": 12.53
+  },
+  {
+    "voltage": 27.53,
+    "current": 2.7,
+    "battery": 94.75
+  },
+  {
+    "voltage": 28.04,
+    "current": 2.77,
+    "battery": 93.84
+  },
+  {
+    "voltage": 28.31,
+    "current": 2.02,
+    "battery": 97.09
+  },
+  {
+    "voltage": 28.2,
+    "current": 3.19,
+    "battery": 87.33
+  },
+  {
+    "voltage": 28.46,
+    "current": 3.18,
+    "battery": 86.39
+  },
+  {
+    "voltage": 27.6,
+    "current": 4.97,
+    "battery": 94.06
+  },
+  {
+    "voltage": 28.31,
+    "current": 4.55,
+    "battery": 93.04
+  },
+  {
+    "voltage": 28.47,
+    "current": 3.32,
+    "battery": 93.28
+  },
+  {
+    "voltage": 28.33,
+    "current": 4.16,
+    "battery": 97.93
+  },
+  {
+    "voltage": 28.08,
+    "current": 4.47,
+    "battery": 85.69
+  },
+  {
+    "voltage": 20.23,
+    "current": 11.45,
+    "battery": 10.4
+  },
+  {
+    "voltage": 20.23,
+    "current": 10.51,
+    "battery": 11.39
+  },
+  {
+    "voltage": 20.64,
+    "current": 11.82,
+    "battery": 11.85
+  },
+  {
+    "voltage": 20.21,
+    "current": 11.33,
+    "battery": 14.68
+  },
+  {
+    "voltage": 20.65,
+    "current": 13.05,
+    "battery": 10.86
+  },
+  {
+    "voltage": 28.23,
+    "current": 2.57,
+    "battery": 90.69
+  },
+  {
+    "voltage": 28.49,
+    "current": 4.24,
+    "battery": 93.35
+  },
+  {
+    "voltage": 28.18,
+    "current": 4.95,
+    "battery": 96.64
+  },
+  {
+    "voltage": 27.73,
+    "current": 2.11,
+    "battery": 89.73
+  },
+  {
+    "voltage": 27.77,
+    "current": 2.74,
+    "battery": 99.14
+  },
+  {
+    "voltage": 28.38,
+    "current": 3.1,
+    "battery": 94.83
+  },
+  {
+    "voltage": 27.9,
+    "current": 5.2,
+    "battery": 91.88
+  },
+  {
+    "voltage": 27.76,
+    "current": 2.86,
+    "battery": 93.42
+  },
+  {
+    "voltage": 27.76,
+    "current": 4.05,
+    "battery": 98.47
+  },
+  {
+    "voltage": 27.9,
+    "current": 2.77,
+    "battery": 99.96
+  },
+  {
+    "voltage": 20.51,
+    "current": 10.45,
+    "battery": 10.24
+  },
+  {
+    "voltage": 20.11,
+    "current": 13.14,
+    "battery": 13.96
+  },
+  {
+    "voltage": 20.42,
+    "current": 10.32,
+    "battery": 11.91
+  },
+  {
+    "voltage": 21.0,
+    "current": 12.65,
+    "battery": 14.86
+  },
+  {
+    "voltage": 20.86,
+    "current": 10.06,
+    "battery": 13.6
+  },
+  {
+    "voltage": 28.18,
+    "current": 3.88,
+    "battery": 89.0
+  },
+  {
+    "voltage": 28.14,
+    "current": 2.39,
+    "battery": 91.52
+  },
+  {
+    "voltage": 27.95,
+    "current": 5.34,
+    "battery": 98.14
+  },
+  {
+    "voltage": 27.76,
+    "current": 3.75,
+    "battery": 87.68
+  },
+  {
+    "voltage": 28.41,
+    "current": 5.05,
+    "battery": 89.48
+  },
+  {
+    "voltage": 28.14,
+    "current": 4.13,
+    "battery": 87.29
+  },
+  {
+    "voltage": 28.26,
+    "current": 3.89,
+    "battery": 96.68
+  },
+  {
+    "voltage": 28.03,
+    "current": 2.0,
+    "battery": 89.86
+  },
+  {
+    "voltage": 27.52,
+    "current": 5.25,
+    "battery": 98.18
+  },
+  {
+    "voltage": 28.33,
+    "current": 3.08,
+    "battery": 85.87
+  },
+  {
+    "voltage": 20.88,
+    "current": 14.73,
+    "battery": 10.43
+  },
+  {
+    "voltage": 20.49,
+    "current": 10.35,
+    "battery": 13.8
+  },
+  {
+    "voltage": 20.77,
+    "current": 10.64,
+    "battery": 12.38
+  },
+  {
+    "voltage": 20.55,
+    "current": 11.33,
+    "battery": 14.36
+  },
+  {
+    "voltage": 20.42,
+    "current": 11.06,
+    "battery": 12.7
+  },
+  {
+    "voltage": 28.23,
+    "current": 2.7,
+    "battery": 89.68
+  },
+  {
+    "voltage": 28.5,
+    "current": 4.27,
+    "battery": 91.57
+  },
+  {
+    "voltage": 28.02,
+    "current": 2.42,
+    "battery": 88.37
+  },
+  {
+    "voltage": 27.84,
+    "current": 4.06,
+    "battery": 88.45
+  },
+  {
+    "voltage": 27.72,
+    "current": 2.25,
+    "battery": 94.47
+  },
+  {
+    "voltage": 27.73,
+    "current": 5.17,
+    "battery": 97.89
+  },
+  {
+    "voltage": 27.57,
+    "current": 2.83,
+    "battery": 95.03
+  },
+  {
+    "voltage": 27.71,
+    "current": 2.46,
+    "battery": 99.03
+  },
+  {
+    "voltage": 28.07,
+    "current": 3.65,
+    "battery": 96.77
+  },
+  {
+    "voltage": 28.31,
+    "current": 2.67,
+    "battery": 86.45
+  },
+  {
+    "voltage": 20.43,
+    "current": 12.12,
+    "battery": 12.34
+  },
+  {
+    "voltage": 20.73,
+    "current": 13.37,
+    "battery": 14.92
+  },
+  {
+    "voltage": 20.1,
+    "current": 12.01,
+    "battery": 11.7
+  },
+  {
+    "voltage": 20.86,
+    "current": 11.24,
+    "battery": 10.95
+  },
+  {
+    "voltage": 20.45,
+    "current": 12.11,
+    "battery": 11.39
+  },
+  {
+    "voltage": 27.75,
+    "current": 5.23,
+    "battery": 91.65
+  },
+  {
+    "voltage": 28.36,
+    "current": 3.93,
+    "battery": 85.76
+  },
+  {
+    "voltage": 28.5,
+    "current": 4.93,
+    "battery": 99.53
+  },
+  {
+    "voltage": 28.43,
+    "current": 4.97,
+    "battery": 87.49
+  },
+  {
+    "voltage": 27.99,
+    "current": 2.75,
+    "battery": 91.02
+  },
+  {
+    "voltage": 27.56,
+    "current": 3.33,
+    "battery": 99.78
+  },
+  {
+    "voltage": 27.77,
+    "current": 4.74,
+    "battery": 91.83
+  },
+  {
+    "voltage": 27.92,
+    "current": 5.35,
+    "battery": 99.93
+  },
+  {
+    "voltage": 28.06,
+    "current": 4.51,
+    "battery": 87.32
+  },
+  {
+    "voltage": 27.8,
+    "current": 5.39,
+    "battery": 93.69
+  },
+  {
+    "voltage": 20.54,
+    "current": 13.74,
+    "battery": 10.29
+  },
+  {
+    "voltage": 20.58,
+    "current": 12.51,
+    "battery": 14.26
+  },
+  {
+    "voltage": 20.16,
+    "current": 14.8,
+    "battery": 10.4
+  },
+  {
+    "voltage": 20.19,
+    "current": 12.98,
+    "battery": 13.38
+  },
+  {
+    "voltage": 20.24,
+    "current": 10.6,
+    "battery": 14.45
+  },
+  {
+    "voltage": 27.75,
+    "current": 4.08,
+    "battery": 94.29
+  },
+  {
+    "voltage": 27.92,
+    "current": 4.04,
+    "battery": 92.84
+  },
+  {
+    "voltage": 28.43,
+    "current": 2.71,
+    "battery": 95.74
+  },
+  {
+    "voltage": 27.74,
+    "current": 3.39,
+    "battery": 95.08
+  },
+  {
+    "voltage": 27.8,
+    "current": 3.11,
+    "battery": 96.28
+  },
+  {
+    "voltage": 27.57,
+    "current": 3.6,
+    "battery": 99.98
+  },
+  {
+    "voltage": 28.5,
+    "current": 2.26,
+    "battery": 88.2
+  },
+  {
+    "voltage": 27.77,
+    "current": 5.27,
+    "battery": 98.21
+  },
+  {
+    "voltage": 28.38,
+    "current": 3.29,
+    "battery": 87.37
+  },
+  {
+    "voltage": 28.33,
+    "current": 4.46,
+    "battery": 94.18
+  },
+  {
+    "voltage": 20.99,
+    "current": 13.27,
+    "battery": 10.04
+  }
+]

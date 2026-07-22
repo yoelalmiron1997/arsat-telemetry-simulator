@@ -1,0 +1,452 @@
+[
+  {
+    "status": 1,
+    "downlink": 1293.1,
+    "uplink": 245.77
+  },
+  {
+    "status": 1,
+    "downlink": 1377.71,
+    "uplink": 420.53
+  },
+  {
+    "status": 1,
+    "downlink": 930.07,
+    "uplink": 555.24
+  },
+  {
+    "status": 1,
+    "downlink": 1327.42,
+    "uplink": 359.49
+  },
+  {
+    "status": 1,
+    "downlink": 812.55,
+    "uplink": 325.01
+  },
+  {
+    "status": 1,
+    "downlink": 1453.59,
+    "uplink": 474.73
+  },
+  {
+    "status": 1,
+    "downlink": 591.22,
+    "uplink": 234.15
+  },
+  {
+    "status": 1,
+    "downlink": 1244.59,
+    "uplink": 349.06
+  },
+  {
+    "status": 1,
+    "downlink": 559.98,
+    "uplink": 582.65
+  },
+  {
+    "status": 1,
+    "downlink": 1170.01,
+    "uplink": 364.32
+  },
+  {
+    "status": 1,
+    "downlink": 1441.13,
+    "uplink": 369.17
+  },
+  {
+    "status": 1,
+    "downlink": 551.45,
+    "uplink": 315.05
+  },
+  {
+    "status": 1,
+    "downlink": 603.6,
+    "uplink": 402.97
+  },
+  {
+    "status": 1,
+    "downlink": 982.19,
+    "uplink": 538.91
+  },
+  {
+    "status": 1,
+    "downlink": 1056.27,
+    "uplink": 245.95
+  },
+  {
+    "status": 1,
+    "downlink": 726.16,
+    "uplink": 371.64
+  },
+  {
+    "status": 1,
+    "downlink": 1267.43,
+    "uplink": 448.69
+  },
+  {
+    "status": 1,
+    "downlink": 1056.74,
+    "uplink": 443.6
+  },
+  {
+    "status": 1,
+    "downlink": 1193.47,
+    "uplink": 211.58
+  },
+  {
+    "status": 1,
+    "downlink": 1262.41,
+    "uplink": 568.62
+  },
+  {
+    "status": 1,
+    "downlink": 681.41,
+    "uplink": 257.3
+  },
+  {
+    "status": 1,
+    "downlink": 569.59,
+    "uplink": 496.39
+  },
+  {
+    "status": 1,
+    "downlink": 591.76,
+    "uplink": 412.19
+  },
+  {
+    "status": 1,
+    "downlink": 953.65,
+    "uplink": 262.96
+  },
+  {
+    "status": 1,
+    "downlink": 824.38,
+    "uplink": 576.56
+  },
+  {
+    "status": 1,
+    "downlink": 1383.34,
+    "uplink": 262.23
+  },
+  {
+    "status": 1,
+    "downlink": 549.76,
+    "uplink": 232.63
+  },
+  {
+    "status": 1,
+    "downlink": 924.01,
+    "uplink": 442.83
+  },
+  {
+    "status": 1,
+    "downlink": 715.57,
+    "uplink": 404.94
+  },
+  {
+    "status": 1,
+    "downlink": 610.89,
+    "uplink": 471.29
+  },
+  {
+    "status": 1,
+    "downlink": 1026.93,
+    "uplink": 323.37
+  },
+  {
+    "status": 1,
+    "downlink": 1484.45,
+    "uplink": 221.91
+  },
+  {
+    "status": 1,
+    "downlink": 1445.32,
+    "uplink": 506.94
+  },
+  {
+    "status": 1,
+    "downlink": 789.45,
+    "uplink": 247.99
+  },
+  {
+    "status": 1,
+    "downlink": 930.66,
+    "uplink": 251.67
+  },
+  {
+    "status": 1,
+    "downlink": 730.11,
+    "uplink": 423.49
+  },
+  {
+    "status": 1,
+    "downlink": 854.17,
+    "uplink": 358.83
+  },
+  {
+    "status": 1,
+    "downlink": 936.22,
+    "uplink": 383.9
+  },
+  {
+    "status": 1,
+    "downlink": 813.06,
+    "uplink": 371.71
+  },
+  {
+    "status": 1,
+    "downlink": 1140.14,
+    "uplink": 315.81
+  },
+  {
+    "status": 1,
+    "downlink": 1466.2,
+    "uplink": 268.75
+  },
+  {
+    "status": 1,
+    "downlink": 960.1,
+    "uplink": 475.84
+  },
+  {
+    "status": 1,
+    "downlink": 936.71,
+    "uplink": 242.35
+  },
+  {
+    "status": 1,
+    "downlink": 900.45,
+    "uplink": 231.46
+  },
+  {
+    "status": 1,
+    "downlink": 1245.8,
+    "uplink": 288.63
+  },
+  {
+    "status": 1,
+    "downlink": 576.38,
+    "uplink": 453.29
+  },
+  {
+    "status": 1,
+    "downlink": 693.9,
+    "uplink": 510.49
+  },
+  {
+    "status": 1,
+    "downlink": 1458.22,
+    "uplink": 458.18
+  },
+  {
+    "status": 1,
+    "downlink": 602.8,
+    "uplink": 302.39
+  },
+  {
+    "status": 1,
+    "downlink": 652.87,
+    "uplink": 503.66
+  },
+  {
+    "status": 1,
+    "downlink": 1451.29,
+    "uplink": 451.18
+  },
+  {
+    "status": 1,
+    "downlink": 1063.74,
+    "uplink": 431.79
+  },
+  {
+    "status": 1,
+    "downlink": 1382.05,
+    "uplink": 457.2
+  },
+  {
+    "status": 1,
+    "downlink": 823.21,
+    "uplink": 588.39
+  },
+  {
+    "status": 1,
+    "downlink": 939.76,
+    "uplink": 387.57
+  },
+  {
+    "status": 1,
+    "downlink": 1296.33,
+    "uplink": 436.57
+  },
+  {
+    "status": 1,
+    "downlink": 574.19,
+    "uplink": 384.7
+  },
+  {
+    "status": 0,
+    "downlink": 0.0,
+    "uplink": 0.0
+  },
+  {
+    "status": 1,
+    "downlink": 787.08,
+    "uplink": 457.87
+  },
+  {
+    "status": 1,
+    "downlink": 590.3,
+    "uplink": 437.63
+  },
+  {
+    "status": 1,
+    "downlink": 1080.33,
+    "uplink": 581.69
+  },
+  {
+    "status": 1,
+    "downlink": 541.02,
+    "uplink": 563.62
+  },
+  {
+    "status": 1,
+    "downlink": 688.24,
+    "uplink": 442.0
+  },
+  {
+    "status": 1,
+    "downlink": 1457.72,
+    "uplink": 380.21
+  },
+  {
+    "status": 1,
+    "downlink": 1337.38,
+    "uplink": 592.95
+  },
+  {
+    "status": 1,
+    "downlink": 1146.13,
+    "uplink": 215.66
+  },
+  {
+    "status": 1,
+    "downlink": 1490.99,
+    "uplink": 409.63
+  },
+  {
+    "status": 1,
+    "downlink": 863.9,
+    "uplink": 567.17
+  },
+  {
+    "status": 1,
+    "downlink": 1274.46,
+    "uplink": 471.56
+  },
+  {
+    "status": 1,
+    "downlink": 1130.89,
+    "uplink": 333.86
+  },
+  {
+    "status": 1,
+    "downlink": 1057.96,
+    "uplink": 354.63
+  },
+  {
+    "status": 1,
+    "downlink": 1351.57,
+    "uplink": 585.76
+  },
+  {
+    "status": 1,
+    "downlink": 650.37,
+    "uplink": 232.6
+  },
+  {
+    "status": 1,
+    "downlink": 1416.75,
+    "uplink": 324.09
+  },
+  {
+    "status": 1,
+    "downlink": 1162.14,
+    "uplink": 251.58
+  },
+  {
+    "status": 1,
+    "downlink": 584.72,
+    "uplink": 423.57
+  },
+  {
+    "status": 1,
+    "downlink": 828.48,
+    "uplink": 251.12
+  },
+  {
+    "status": 1,
+    "downlink": 1447.11,
+    "uplink": 598.87
+  },
+  {
+    "status": 1,
+    "downlink": 593.45,
+    "uplink": 468.18
+  },
+  {
+    "status": 1,
+    "downlink": 518.23,
+    "uplink": 323.55
+  },
+  {
+    "status": 1,
+    "downlink": 841.73,
+    "uplink": 506.46
+  },
+  {
+    "status": 1,
+    "downlink": 1499.98,
+    "uplink": 261.98
+  },
+  {
+    "status": 1,
+    "downlink": 1288.12,
+    "uplink": 403.08
+  },
+  {
+    "status": 1,
+    "downlink": 1238.64,
+    "uplink": 410.61
+  },
+  {
+    "status": 1,
+    "downlink": 1376.39,
+    "uplink": 447.21
+  },
+  {
+    "status": 1,
+    "downlink": 654.25,
+    "uplink": 272.34
+  },
+  {
+    "status": 1,
+    "downlink": 1124.74,
+    "uplink": 561.06
+  },
+  {
+    "status": 1,
+    "downlink": 543.69,
+    "uplink": 345.72
+  },
+  {
+    "status": 1,
+    "downlink": 1469.59,
+    "uplink": 444.24
+  },
+  {
+    "status": 1,
+    "downlink": 1283.8,
+    "uplink": 293.6
+  }
+]

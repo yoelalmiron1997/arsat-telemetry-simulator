@@ -1,0 +1,452 @@
+[
+  {
+    "temp_solar": 63.42,
+    "temp_battery": 14.49,
+    "temp_payload": 28.27
+  },
+  {
+    "temp_solar": 87.79,
+    "temp_battery": 12.01,
+    "temp_payload": 17.31
+  },
+  {
+    "temp_solar": -78.59,
+    "temp_battery": 18.3,
+    "temp_payload": 20.45
+  },
+  {
+    "temp_solar": 20.97,
+    "temp_battery": 20.76,
+    "temp_payload": 19.07
+  },
+  {
+    "temp_solar": 26.85,
+    "temp_battery": 13.96,
+    "temp_payload": 24.77
+  },
+  {
+    "temp_solar": 81.07,
+    "temp_battery": 22.69,
+    "temp_payload": 16.85
+  },
+  {
+    "temp_solar": -15.28,
+    "temp_battery": 14.15,
+    "temp_payload": 15.07
+  },
+  {
+    "temp_solar": 54.22,
+    "temp_battery": 19.56,
+    "temp_payload": 20.24
+  },
+  {
+    "temp_solar": 48.25,
+    "temp_battery": 18.28,
+    "temp_payload": 23.55
+  },
+  {
+    "temp_solar": -98.07,
+    "temp_battery": 11.13,
+    "temp_payload": 32.66
+  },
+  {
+    "temp_solar": 80.79,
+    "temp_battery": 18.18,
+    "temp_payload": 31.69
+  },
+  {
+    "temp_solar": 16.5,
+    "temp_battery": 12.22,
+    "temp_payload": 17.55
+  },
+  {
+    "temp_solar": -38.35,
+    "temp_battery": 23.48,
+    "temp_payload": 30.92
+  },
+  {
+    "temp_solar": 72.14,
+    "temp_battery": 23.48,
+    "temp_payload": 19.2
+  },
+  {
+    "temp_solar": -50.09,
+    "temp_battery": 11.54,
+    "temp_payload": 30.6
+  },
+  {
+    "temp_solar": 76.83,
+    "temp_battery": 16.1,
+    "temp_payload": 27.41
+  },
+  {
+    "temp_solar": -69.09,
+    "temp_battery": 23.95,
+    "temp_payload": 32.29
+  },
+  {
+    "temp_solar": 95.24,
+    "temp_battery": 22.16,
+    "temp_payload": 32.63
+  },
+  {
+    "temp_solar": -95.04,
+    "temp_battery": 21.05,
+    "temp_payload": 21.64
+  },
+  {
+    "temp_solar": 86.16,
+    "temp_battery": 22.03,
+    "temp_payload": 32.28
+  },
+  {
+    "temp_solar": 62.15,
+    "temp_battery": 14.0,
+    "temp_payload": 30.75
+  },
+  {
+    "temp_solar": -78.38,
+    "temp_battery": 23.08,
+    "temp_payload": 32.17
+  },
+  {
+    "temp_solar": -55.51,
+    "temp_battery": 22.25,
+    "temp_payload": 24.21
+  },
+  {
+    "temp_solar": -38.96,
+    "temp_battery": 21.93,
+    "temp_payload": 19.55
+  },
+  {
+    "temp_solar": -95.27,
+    "temp_battery": 12.9,
+    "temp_payload": 21.57
+  },
+  {
+    "temp_solar": 72.87,
+    "temp_battery": 24.5,
+    "temp_payload": 20.58
+  },
+  {
+    "temp_solar": 28.3,
+    "temp_battery": 16.0,
+    "temp_payload": 34.62
+  },
+  {
+    "temp_solar": 7.24,
+    "temp_battery": 24.09,
+    "temp_payload": 17.31
+  },
+  {
+    "temp_solar": 94.08,
+    "temp_battery": 12.68,
+    "temp_payload": 34.25
+  },
+  {
+    "temp_solar": -46.91,
+    "temp_battery": 11.63,
+    "temp_payload": 23.69
+  },
+  {
+    "temp_solar": 45.71,
+    "temp_battery": 14.71,
+    "temp_payload": 27.12
+  },
+  {
+    "temp_solar": 2.28,
+    "temp_battery": 15.78,
+    "temp_payload": 26.53
+  },
+  {
+    "temp_solar": -49.06,
+    "temp_battery": 20.63,
+    "temp_payload": 15.03
+  },
+  {
+    "temp_solar": 85.12,
+    "temp_battery": 18.08,
+    "temp_payload": 29.39
+  },
+  {
+    "temp_solar": 48.39,
+    "temp_battery": 20.06,
+    "temp_payload": 22.28
+  },
+  {
+    "temp_solar": -86.01,
+    "temp_battery": 19.96,
+    "temp_payload": 21.6
+  },
+  {
+    "temp_solar": -37.22,
+    "temp_battery": 22.72,
+    "temp_payload": 29.4
+  },
+  {
+    "temp_solar": -39.94,
+    "temp_battery": 14.64,
+    "temp_payload": 23.17
+  },
+  {
+    "temp_solar": -19.52,
+    "temp_battery": 14.43,
+    "temp_payload": 17.55
+  },
+  {
+    "temp_solar": -15.91,
+    "temp_battery": 24.11,
+    "temp_payload": 28.55
+  },
+  {
+    "temp_solar": 80.56,
+    "temp_battery": 19.23,
+    "temp_payload": 21.02
+  },
+  {
+    "temp_solar": 9.59,
+    "temp_battery": 10.01,
+    "temp_payload": 20.74
+  },
+  {
+    "temp_solar": -14.02,
+    "temp_battery": 18.7,
+    "temp_payload": 28.09
+  },
+  {
+    "temp_solar": -7.0,
+    "temp_battery": 16.63,
+    "temp_payload": 19.27
+  },
+  {
+    "temp_solar": -5.36,
+    "temp_battery": 23.52,
+    "temp_payload": 30.92
+  },
+  {
+    "temp_solar": -66.06,
+    "temp_battery": 11.27,
+    "temp_payload": 25.31
+  },
+  {
+    "temp_solar": 26.59,
+    "temp_battery": 15.03,
+    "temp_payload": 31.37
+  },
+  {
+    "temp_solar": 50.23,
+    "temp_battery": 20.09,
+    "temp_payload": 19.49
+  },
+  {
+    "temp_solar": -60.17,
+    "temp_battery": 10.37,
+    "temp_payload": 19.9
+  },
+  {
+    "temp_solar": -4.97,
+    "temp_battery": 22.75,
+    "temp_payload": 16.46
+  },
+  {
+    "temp_solar": -17.11,
+    "temp_battery": 19.45,
+    "temp_payload": 18.89
+  },
+  {
+    "temp_solar": 39.27,
+    "temp_battery": 17.42,
+    "temp_payload": 19.88
+  },
+  {
+    "temp_solar": 31.21,
+    "temp_battery": 10.08,
+    "temp_payload": 30.02
+  },
+  {
+    "temp_solar": 54.01,
+    "temp_battery": 11.6,
+    "temp_payload": 23.5
+  },
+  {
+    "temp_solar": -64.82,
+    "temp_battery": 24.37,
+    "temp_payload": 25.36
+  },
+  {
+    "temp_solar": -89.96,
+    "temp_battery": 13.74,
+    "temp_payload": 31.97
+  },
+  {
+    "temp_solar": -8.71,
+    "temp_battery": 22.02,
+    "temp_payload": 28.35
+  },
+  {
+    "temp_solar": 97.58,
+    "temp_battery": 18.93,
+    "temp_payload": 34.0
+  },
+  {
+    "temp_solar": 78.29,
+    "temp_battery": 19.19,
+    "temp_payload": 29.39
+  },
+  {
+    "temp_solar": 0.96,
+    "temp_battery": 22.46,
+    "temp_payload": 25.96
+  },
+  {
+    "temp_solar": 79.44,
+    "temp_battery": 21.15,
+    "temp_payload": 24.49
+  },
+  {
+    "temp_solar": -48.16,
+    "temp_battery": 13.71,
+    "temp_payload": 27.75
+  },
+  {
+    "temp_solar": 53.16,
+    "temp_battery": 17.82,
+    "temp_payload": 27.53
+  },
+  {
+    "temp_solar": -45.08,
+    "temp_battery": 11.16,
+    "temp_payload": 20.71
+  },
+  {
+    "temp_solar": -45.66,
+    "temp_battery": 14.8,
+    "temp_payload": 25.8
+  },
+  {
+    "temp_solar": -72.33,
+    "temp_battery": 13.47,
+    "temp_payload": 28.88
+  },
+  {
+    "temp_solar": 41.28,
+    "temp_battery": 10.96,
+    "temp_payload": 23.15
+  },
+  {
+    "temp_solar": 8.52,
+    "temp_battery": 16.24,
+    "temp_payload": 19.14
+  },
+  {
+    "temp_solar": -15.97,
+    "temp_battery": 23.57,
+    "temp_payload": 26.68
+  },
+  {
+    "temp_solar": 39.1,
+    "temp_battery": 22.85,
+    "temp_payload": 30.31
+  },
+  {
+    "temp_solar": -23.92,
+    "temp_battery": 10.09,
+    "temp_payload": 22.04
+  },
+  {
+    "temp_solar": 50.7,
+    "temp_battery": 22.8,
+    "temp_payload": 34.07
+  },
+  {
+    "temp_solar": -16.2,
+    "temp_battery": 21.21,
+    "temp_payload": 25.92
+  },
+  {
+    "temp_solar": 20.65,
+    "temp_battery": 13.31,
+    "temp_payload": 19.39
+  },
+  {
+    "temp_solar": -12.83,
+    "temp_battery": 10.44,
+    "temp_payload": 21.72
+  },
+  {
+    "temp_solar": 35.83,
+    "temp_battery": 16.06,
+    "temp_payload": 18.3
+  },
+  {
+    "temp_solar": -6.52,
+    "temp_battery": 11.91,
+    "temp_payload": 27.45
+  },
+  {
+    "temp_solar": -94.61,
+    "temp_battery": 15.91,
+    "temp_payload": 26.29
+  },
+  {
+    "temp_solar": -94.58,
+    "temp_battery": 19.64,
+    "temp_payload": 17.71
+  },
+  {
+    "temp_solar": -7.66,
+    "temp_battery": 10.75,
+    "temp_payload": 22.58
+  },
+  {
+    "temp_solar": -57.67,
+    "temp_battery": 14.9,
+    "temp_payload": 30.22
+  },
+  {
+    "temp_solar": -24.17,
+    "temp_battery": 21.28,
+    "temp_payload": 31.64
+  },
+  {
+    "temp_solar": -49.55,
+    "temp_battery": 11.23,
+    "temp_payload": 15.39
+  },
+  {
+    "temp_solar": 7.88,
+    "temp_battery": 25.0,
+    "temp_payload": 22.0
+  },
+  {
+    "temp_solar": 30.03,
+    "temp_battery": 21.72,
+    "temp_payload": 28.04
+  },
+  {
+    "temp_solar": 50.85,
+    "temp_battery": 24.24,
+    "temp_payload": 18.99
+  },
+  {
+    "temp_solar": -95.92,
+    "temp_battery": 12.29,
+    "temp_payload": 17.52
+  },
+  {
+    "temp_solar": 33.89,
+    "temp_battery": 18.46,
+    "temp_payload": 19.36
+  },
+  {
+    "temp_solar": 39.89,
+    "temp_battery": 21.5,
+    "temp_payload": 18.36
+  },
+  {
+    "temp_solar": 21.45,
+    "temp_battery": 21.22,
+    "temp_payload": 17.29
+  }
+]

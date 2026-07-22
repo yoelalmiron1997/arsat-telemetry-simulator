@@ -1,0 +1,31 @@
+# Docker Compose carga este archivo AUTOMÁTICAMENTE junto a docker-compose.yml
+# cada vez que corrés "docker compose up" sin especificar "-f" a mano — por
+# eso el uso local y el pipeline de CI (que solo hacen "docker compose up -d
+# --build") siguen funcionando exactamente igual que antes, sin ningún
+# cambio de comando ni de configuración.
+#
+# Publica los puertos de Mosquitto, Prometheus y Ground Station al host,
+# necesarios para debuggear en local y para que los tests (tests/) puedan
+# pegarle a localhost:1883 / :9090 / :8000.
+#
+# En el deploy público (portfolio) este archivo NO se usa: ahí se invoca a
+# Compose con "-f" explícito (ver PROD_DEPLOYMENT.md), lo cual hace que
+# Compose ignore la auto-carga de este override y esos 3 servicios queden
+# sin puertos públicos.
+
+services:
+  mosquitto:
+    ports:
+      - "1883:1883"
+
+  prometheus:
+    ports:
+      - "9090:9090"
+
+  ground_station:
+    ports:
+      - "8000:8000"
+
+  grafana:
+    ports:
+      - "3000:3000"
